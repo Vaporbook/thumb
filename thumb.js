@@ -1,4 +1,3 @@
-
 /*
 
 usage:
@@ -30,29 +29,29 @@ var fileHandler = function (file)
 */
 
 function thumb(
-  							 					file /* File object, per File API */,
-								 					sizes /* keyed objects with props height,width */,
-								 					cb /* callback to receive modified sizes object with url property added */
-							)
+  		file /* File object, per File API */,
+		sizes /* keyed objects with props height,width */,
+		cb /* callback to receive modified sizes object with url property added */
+		)
 {
 
-									var cel = document.createElement('canvas');
-									var cvs = document.body.appendChild(cel);
-									var ctx = cvs.getContext('2d');
-								  var img = new Image;
-								  img.src = URL.createObjectURL(file);
-								  img.onload = function() 
-								  {
+								var cel = document.createElement('canvas');
+								var cvs = document.body.appendChild(cel);
+								var ctx = cvs.getContext('2d');
+								var img = new Image;
+								img.src = URL.createObjectURL(file);
+								img.onload = function() 
+								{
 								    	for(sz in sizes) {
 								    		var h = sizes[sz].height;
 								    		var w = sizes[sz].width;
-											  cvs.width = w;
-											  cvs.height = h;
-									      ctx.drawImage(img, 0,0,h,w);
-								        sizes[sz].url = cvs.toDataURL('image/png');
-								      }
+										cvs.width = w;
+										cvs.height = h;
+										ctx.drawImage(img, 0,0,h,w);
+								        	sizes[sz].url = cvs.toDataURL('image/png');
+								     	}
     									document.body.removeChild(cvs);
 		    							cb(sizes);
-								  };
+								 };
 
 };
