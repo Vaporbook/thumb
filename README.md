@@ -8,10 +8,9 @@ usage
 ===
 
 
-   var fileHandler = function (file)
-   {
+     var fileHandler = function (file) {
 
-     var sizes = {
+        var sizes = {
                   sm: {
                           height:100,
                           width:100
@@ -22,12 +21,13 @@ usage
                       }
               };
               
-     thumb(file, sizes, function (o) {
+        thumb(file, sizes, function (o) {
    
-        console.log('small thumbnail url is '+o.sm.url);
+           console.log('small thumbnail url is '+o.sm.url);
       
-  
-     });
+        });
 
-   }
+     };
+   
+   
 
