@@ -39,6 +39,7 @@ function thumb(
 								var cvs = document.body.appendChild(cel);
 								var ctx = cvs.getContext('2d');
 								var img = new Image;
+								var URL = window.URL || window.webkitURL;
 								img.src = URL.createObjectURL(file);
 								img.onload = function() 
 								{
